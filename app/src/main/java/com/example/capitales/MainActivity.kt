@@ -25,11 +25,12 @@ class MainActivity : ComponentActivity() {
             var poblacion = findViewById<TextView>(R.id.editTextText3).text.toString().toInt()
             val result = databaseHandler.addData(pais, ciudadCapital, poblacion)
             if (result) {
-                Toast.makeText(this, "Data saved successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Se guardo la data exitosamente", Toast.LENGTH_SHORT).show()
                 findViewById<TextView>(R.id.editTextText).setText("")
-                findViewById<TextView>(R.id.editTextText).hint = "Pais"
+                findViewById<TextView>(R.id.editTextText2).setText("")
+                findViewById<TextView>(R.id.editTextText3).setText("")
             } else {
-                Toast.makeText(this, "Failed to save data", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Error al guardar la data", Toast.LENGTH_SHORT).show()
             }
         }
 
