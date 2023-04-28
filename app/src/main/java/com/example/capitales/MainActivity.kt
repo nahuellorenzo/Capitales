@@ -26,6 +26,7 @@ class MainActivity : ComponentActivity() {
 
         btn.setOnClickListener{
             Toast.makeText(this, "Sos un capo", Toast.LENGTH_SHORT).show();
+            pais.setText("nahuel");
         }
     }
 }
