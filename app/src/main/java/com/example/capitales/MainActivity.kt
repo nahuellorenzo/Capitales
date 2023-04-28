@@ -3,17 +3,9 @@ package com.example.capitales
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.capitales.ui.theme.CapitalesTheme
 import android.widget.TextView
 import android.widget.Toast
+import android.content.Intent
 
 class MainActivity : ComponentActivity() {
 
@@ -22,6 +14,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var btn = findViewById<Button>(R.id.button)
+        val btn3 = findViewById<Button>(R.id.button3)
 
         databaseHandler = DatabaseHandler(this)
 
@@ -38,7 +31,11 @@ class MainActivity : ComponentActivity() {
             } else {
                 Toast.makeText(this, "Failed to save data", Toast.LENGTH_SHORT).show()
             }
+        }
 
+        btn3.setOnClickListener{
+            val intent = Intent(this, Consultar::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -55,22 +55,19 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         return dataList
     }
 
-    fun getDataByCity(city: String): ArrayList<String> {
-        val dataList = ArrayList<String>()
+    fun getDataByCity(city: String): Array<Any>? {
         val db = this.readableDatabase
         val selectByCityQuery = "SELECT * FROM $TABLE_NAME WHERE $KEY_DATA2 = ?"
-        val cursor = db.rawQuery(selectByCityQuery, arrayOf("varela"))
+        val cursor = db.rawQuery(selectByCityQuery, arrayOf(city))
         if (cursor.moveToFirst()) {
-            do {
-                val data = cursor.getString(cursor.getColumnIndex(KEY_DATA1))
-                dataList.add(data)
-                val data2 = cursor.getString(cursor.getColumnIndex(KEY_DATA2))
-                dataList.add(data2)
-                val data3 = cursor.getString(cursor.getColumnIndex(KEY_DATA3))
-                dataList.add(data3)
-            } while (cursor.moveToNext())
+            val data1 = cursor.getString(cursor.getColumnIndex(KEY_DATA1))
+            val data2 = cursor.getString(cursor.getColumnIndex(KEY_DATA2))
+            val data3 = cursor.getInt(cursor.getColumnIndex(KEY_DATA3))
+            cursor.close()
+            return arrayOf(data1, data2, data3)
+        } else {
+            cursor.close()
+            return null
         }
-        cursor.close()
-        return dataList
     }
 }
