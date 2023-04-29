@@ -10,9 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="259dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="89dp"
+        android:layout_marginBottom="30dp"
         android:ems="10"
         android:hint="Ingrese ciudad a eliminar"
         android:inputType="text"
@@ -26,12 +26,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="89dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="290dp"
+        android:layout_marginBottom="100dp"
+        android:text="Eliminar"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+
+    <EditText
+        android:id="@+id/editTextText9"
+        android:layout_width="335dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Ingrese pais para eliminar sus ciudades"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="129dp"
         android:text="Eliminar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextText9" />
 </androidx.constraintlayout.widget.ConstraintLayout>

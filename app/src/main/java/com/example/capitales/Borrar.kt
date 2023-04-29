@@ -18,6 +18,7 @@ class Borrar : ComponentActivity() {
         databaseHandler = DatabaseHandler(this)
 
         val btn = findViewById<Button>(R.id.button4)
+        val btnPais = findViewById<Button>(R.id.button6)
 
         btn.setOnClickListener{
             val city = findViewById<EditText>(R.id.editTextText8).text.toString()
@@ -34,6 +35,24 @@ class Borrar : ComponentActivity() {
             }
             else{
                 Toast.makeText(this, "Introduce una ciudad para eliminar", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        btnPais.setOnClickListener{
+            val pais = findViewById<EditText>(R.id.editTextText9).text.toString()
+            if (pais.isNotEmpty()){
+                val res = databaseHandler.deleteByCountry(pais)
+                if (res != 0 )
+                {
+                    Toast.makeText(this, "Ciudades de "+pais+" elimiandas", Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    Toast.makeText(this, "No se encontro ciudades del pais ingresado", Toast.LENGTH_SHORT).show()
+                }
+            }
+            else{
+                Toast.makeText(this, "Introduce un pais para eliminar sus ciudades", Toast.LENGTH_LONG).show()
             }
         }
     }

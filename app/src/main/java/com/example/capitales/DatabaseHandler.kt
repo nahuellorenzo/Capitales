@@ -78,4 +78,13 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         db.close()
         return deleteRows
     }
+
+    fun deleteByCountry(country: String):Int{
+        val db = this.writableDatabase
+        val whereClause = "$KEY_DATA1 = ?"
+        val whereArgs = arrayOf(country)
+        val deleteRows = db.delete( "$TABLE_NAME", whereClause, whereArgs)
+        db.close()
+        return deleteRows
+    }
 }
