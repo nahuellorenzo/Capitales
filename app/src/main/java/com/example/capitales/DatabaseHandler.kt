@@ -70,4 +70,12 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
             return null
         }
     }
+    fun deleteByCity(city: String): Int{
+        val db = this.writableDatabase
+        val whereClause = "$KEY_DATA2 = ?"
+        val whereArgs = arrayOf(city)
+        val deleteRows = db.delete("$KEY_DATA2", whereClause, whereArgs)
+        db.close()
+        return deleteRows
+    }
 }
