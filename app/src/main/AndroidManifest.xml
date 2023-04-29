@@ -25,6 +25,7 @@
         </activity>
         <activity android:name=".Consultar"/>
         <activity android:name=".Borrar"/>
+        <activity android:name=".Modificar"/>
     </application>
 
 </manifest>
