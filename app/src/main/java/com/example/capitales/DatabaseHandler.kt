@@ -74,7 +74,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         val db = this.writableDatabase
         val whereClause = "$KEY_DATA2 = ?"
         val whereArgs = arrayOf(city)
-        val deleteRows = db.delete("$KEY_DATA2", whereClause, whereArgs)
+        val deleteRows = db.delete("$TABLE_NAME", whereClause, whereArgs)
         db.close()
         return deleteRows
     }

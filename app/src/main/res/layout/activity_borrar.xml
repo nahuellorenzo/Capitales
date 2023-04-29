@@ -9,16 +9,15 @@
         android:id="@+id/editTextText8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="259dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="150dp"
         android:layout_marginBottom="89dp"
         android:ems="10"
         android:hint="Ingrese ciudad a eliminar"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

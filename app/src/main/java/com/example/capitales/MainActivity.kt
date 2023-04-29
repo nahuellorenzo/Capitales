@@ -15,6 +15,7 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
         var btn = findViewById<Button>(R.id.button)
         val btn3 = findViewById<Button>(R.id.button3)
+        val btnBorrar = findViewById<Button>(R.id.button5)
 
         databaseHandler = DatabaseHandler(this)
 
@@ -38,5 +39,11 @@ class MainActivity : ComponentActivity() {
             val intent = Intent(this, Consultar::class.java)
             startActivity(intent)
         }
+
+        btnBorrar.setOnClickListener{
+            val intent2 = Intent(this, Borrar::class.java)
+            startActivity(intent2)
+        }
+
     }
 }

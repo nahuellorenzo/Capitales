@@ -3,7 +3,6 @@ package com.example.capitales
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.capitales.R
@@ -24,7 +23,7 @@ class Borrar : ComponentActivity() {
             val city = findViewById<EditText>(R.id.editTextText8).text.toString()
             if (city.isNotEmpty()){
                 val res = databaseHandler.deleteByCity(city)
-                if (res !== 0 )
+                if (res != 0 )
                 {
                     Toast.makeText(this, "Ciudad eliminada", Toast.LENGTH_SHORT).show()
                 }
