@@ -87,4 +87,16 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         db.close()
         return deleteRows
     }
+
+    fun updatePopulation(city: String, population: Int): Int {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put(KEY_DATA3, population)
+        }
+        val whereClause = "$KEY_DATA2 = ?"
+        val whereArgs = arrayOf(city)
+        val rowsUpdated = db.update(TABLE_NAME, values, whereClause, whereArgs)
+        db.close()
+        return rowsUpdated
+    }
 }
