@@ -5,64 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="146dp"
+        android:layout_height="152dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="93dp"
+        android:src="@drawable/mapa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="50dp"
-        android:text="Modificar Poblaciones"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText10"
+        android:text="Modificar Población"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.276" />
 
     <EditText
         android:id="@+id/editTextText10"
         android:layout_width="241dp"
         android:layout_height="46dp"
         android:layout_marginStart="85dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="85dp"
-        android:layout_marginBottom="34dp"
         android:ems="10"
         android:hint="Ingrese ciudad a modificar"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText11"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.448" />
 
     <EditText
         android:id="@+id/editTextText11"
         android:layout_width="254dp"
         android:layout_height="48dp"
         android:layout_marginStart="85dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="85dp"
-        android:layout_marginBottom="81dp"
         android:ems="10"
         android:hint="Ingrese poblacion modificada"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText10" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextText10"
+        app:layout_constraintVertical_bias="0.044" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_rounded"
+        android:backgroundTint="#000000"
+        android:textColor="@color/white"
         android:layout_marginStart="170dp"
-        android:layout_marginTop="64dp"
         android:layout_marginEnd="170dp"
-        android:layout_marginBottom="116dp"
         android:text="Modificar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText11" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.815" />
 </androidx.constraintlayout.widget.ConstraintLayout>

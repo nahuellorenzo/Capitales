@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         databaseHandler = DatabaseHandler(this)
 
         btn.setOnClickListener{
-            Toast.makeText(this, "Sos un capo", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Se guardo la data exitosamente", Toast.LENGTH_SHORT).show();
             var pais = findViewById<TextView>(R.id.editTextText).text.toString()
             var ciudadCapital = findViewById<TextView>(R.id.editTextText2).text.toString()
             var poblacion = findViewById<TextView>(R.id.editTextText3).text.toString().toInt()

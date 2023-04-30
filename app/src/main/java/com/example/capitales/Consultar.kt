@@ -17,15 +17,15 @@ class Consultar : ComponentActivity() {
 
         databaseHandler = DatabaseHandler(this)
 
-        var btn = findViewById<Button>(R.id.button2)
+        var btn = findViewById<Button>(R.id.button3)
 
         btn.setOnClickListener{
             var consul = findViewById<TextView>(R.id.editTextText4).text.toString()
             val datalist = databaseHandler.getDataByCity(consul)
             if (datalist != null){
-                findViewById<TextView>(R.id.editTextText5).setText(datalist[0] as String)
-                findViewById<TextView>(R.id.editTextText6).setText(datalist[1] as String)
-                findViewById<TextView>(R.id.editTextText7).setText(datalist[2].toString())
+                findViewById<TextView>(R.id.editTextText).setText(datalist[0] as String)
+                findViewById<TextView>(R.id.editTextText2).setText(datalist[1] as String)
+                findViewById<TextView>(R.id.editTextText3).setText(datalist[2].toString())
             }
             else
             {
