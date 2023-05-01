@@ -1,5 +1,6 @@
 package com.example.capitales
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -21,7 +22,7 @@ class Consultar : ComponentActivity() {
         var btn = findViewById<Button>(R.id.button3)
 
         btn.setOnClickListener{
-            var consul = findViewById<TextView>(R.id.editTextTextConsulta).text.toString()
+            var consul = findViewById<TextView>(R.id.editTextTextConsulta).text.toString().trim()
             val datalist = databaseHandler.getDataByCity(consul)
             val exito = findViewById<TextView>(R.id.textView5)
             val pais = findViewById<TextView>(R.id.textView6)
@@ -47,6 +48,13 @@ class Consultar : ComponentActivity() {
                 poblacion.visibility = View.INVISIBLE
                 Toast.makeText(this, "No se encontro la capital", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        var atras = findViewById<Button>(R.id.button2)
+
+        atras.setOnClickListener{
+            val intent_2: Intent = Intent(this, MainActivity:: class.java)
+            startActivity(intent_2)
         }
     }
 }

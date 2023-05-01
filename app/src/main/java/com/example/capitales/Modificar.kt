@@ -21,8 +21,8 @@ class Modificar : ComponentActivity() {
         var btn = findViewById<Button>(R.id.button8)
 
         btn.setOnClickListener{
-            val city = findViewById<TextView>(R.id.editTextText10).text.toString()
-            val population = findViewById<TextView>(R.id.editTextText11).text.toString()
+            val city = findViewById<TextView>(R.id.editTextText10).text.toString().trim()
+            val population = findViewById<TextView>(R.id.editTextText11).text.toString().trim()
             if (city.isNotEmpty() && population.isNotEmpty()){
                 val resp = databaseHandler.updatePopulation(city, population.toInt())
                 if (resp != 0){

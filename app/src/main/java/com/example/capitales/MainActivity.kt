@@ -21,9 +21,9 @@ class MainActivity : ComponentActivity() {
         databaseHandler = DatabaseHandler(this)
 
         btn.setOnClickListener{
-            var pais = findViewById<TextView>(R.id.editTextText).text.toString()
-            var ciudadCapital = findViewById<TextView>(R.id.editTextText2).text.toString()
-            var poblacion = findViewById<TextView>(R.id.editTextText3).text.toString()
+            var pais = findViewById<TextView>(R.id.editTextText).text.toString().trim()
+            var ciudadCapital = findViewById<TextView>(R.id.editTextText2).text.toString().trim()
+            var poblacion = findViewById<TextView>(R.id.editTextText3).text.toString().trim()
             if (pais.isNotEmpty() && ciudadCapital.isNotEmpty() && poblacion.isNotEmpty())
             {
                 val result = databaseHandler.addData(pais, ciudadCapital, poblacion.toInt())
