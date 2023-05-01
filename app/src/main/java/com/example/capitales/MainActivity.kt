@@ -21,18 +21,23 @@ class MainActivity : ComponentActivity() {
         databaseHandler = DatabaseHandler(this)
 
         btn.setOnClickListener{
-            Toast.makeText(this, "Se guardo la data exitosamente", Toast.LENGTH_SHORT).show();
             var pais = findViewById<TextView>(R.id.editTextText).text.toString()
             var ciudadCapital = findViewById<TextView>(R.id.editTextText2).text.toString()
-            var poblacion = findViewById<TextView>(R.id.editTextText3).text.toString().toInt()
-            val result = databaseHandler.addData(pais, ciudadCapital, poblacion)
-            if (result) {
-                Toast.makeText(this, "Se guardo la data exitosamente", Toast.LENGTH_SHORT).show()
-                findViewById<TextView>(R.id.editTextText).setText("")
-                findViewById<TextView>(R.id.editTextText2).setText("")
-                findViewById<TextView>(R.id.editTextText3).setText("")
-            } else {
-                Toast.makeText(this, "Error al guardar la data", Toast.LENGTH_SHORT).show()
+            var poblacion = findViewById<TextView>(R.id.editTextText3).text.toString()
+            if (pais.isNotEmpty() && ciudadCapital.isNotEmpty() && poblacion.isNotEmpty())
+            {
+                val result = databaseHandler.addData(pais, ciudadCapital, poblacion.toInt())
+                if (result) {
+                    Toast.makeText(this, "Se guardo la data exitosamente", Toast.LENGTH_SHORT).show()
+                    findViewById<TextView>(R.id.editTextText).setText("")
+                    findViewById<TextView>(R.id.editTextText2).setText("")
+                    findViewById<TextView>(R.id.editTextText3).setText("")
+                } else {
+                    Toast.makeText(this, "Error al guardar la data", Toast.LENGTH_SHORT).show()
+                }
+            }
+            else{
+                Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
             }
         }
 
