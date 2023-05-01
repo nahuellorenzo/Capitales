@@ -6,6 +6,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.capitales.R
+import android.view.View
 
 class Consultar : ComponentActivity() {
 
@@ -20,15 +21,30 @@ class Consultar : ComponentActivity() {
         var btn = findViewById<Button>(R.id.button3)
 
         btn.setOnClickListener{
-            var consul = findViewById<TextView>(R.id.editTextText4).text.toString()
+            var consul = findViewById<TextView>(R.id.editTextTextConsulta).text.toString()
             val datalist = databaseHandler.getDataByCity(consul)
+            val exito = findViewById<TextView>(R.id.textView5)
+            val pais = findViewById<TextView>(R.id.textView6)
+            val capital = findViewById<TextView>(R.id.textView7)
+            val poblacion = findViewById<TextView>(R.id.textView8)
             if (datalist != null){
-                findViewById<TextView>(R.id.editTextText).setText(datalist[0] as String)
-                findViewById<TextView>(R.id.editTextText2).setText(datalist[1] as String)
-                findViewById<TextView>(R.id.editTextText3).setText(datalist[2].toString())
+                exito.visibility = View.VISIBLE
+                pais.text = "Pais: ${datalist[0]}"
+                pais.visibility = View.VISIBLE
+                capital.text = "Capital: ${datalist[1]}"
+                capital.visibility = View.VISIBLE
+                poblacion.text = "Población: ${datalist[2]}"
+                poblacion.visibility = View.VISIBLE
             }
             else
             {
+                exito.visibility = View.INVISIBLE
+                pais.text = "Pais: "
+                pais.visibility = View.INVISIBLE
+                capital.text = "Ciudad: "
+                capital.visibility = View.INVISIBLE
+                poblacion.text = "Poblacion: "
+                poblacion.visibility = View.INVISIBLE
                 Toast.makeText(this, "No se encontro la capital", Toast.LENGTH_SHORT).show()
             }
         }
