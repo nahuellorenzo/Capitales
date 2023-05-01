@@ -23,9 +23,9 @@ class Consultar : ComponentActivity() {
             var consul = findViewById<TextView>(R.id.editTextText4).text.toString()
             val datalist = databaseHandler.getDataByCity(consul)
             if (datalist != null){
-                findViewById<TextView>(R.id.editTextText).setText(datalist[0] as String)
-                findViewById<TextView>(R.id.editTextText2).setText(datalist[1] as String)
-                findViewById<TextView>(R.id.editTextText3).setText(datalist[2].toString())
+                findViewById<TextView>(R.id.editTextText2).setText(datalist[0] as String)
+                findViewById<TextView>(R.id.editTextText3).setText(datalist[1] as String)
+                findViewById<TextView>(R.id.editTextText).setText(datalist[2].toString())
             }
             else
             {
