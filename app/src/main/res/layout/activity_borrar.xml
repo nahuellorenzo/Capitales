@@ -35,85 +35,73 @@
 
     <EditText
         android:id="@+id/editTextText8"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="184dp"
+        android:layout_width="253dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:hint="Ingrese ciudad a eliminar"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.629"
+        app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintVertical_bias="0.458" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="55dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/button_rounded"
         android:drawableLeft="@drawable/trash"
         android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editTextText9"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.456" />
 
     <EditText
         android:id="@+id/editTextText9"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="253dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:hint="Ingrese Pais"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67" />
+        app:layout_constraintVertical_bias="0.653" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="214dp"
         android:text="Pais del cual quiere eliminar sus ciudades"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.29"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.699"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="55dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="228dp"
         android:background="@drawable/button_rounded"
         android:drawableLeft="@drawable/trash"
         android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editTextText9"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.654" />
 
     <Button
         android:id="@+id/button2"

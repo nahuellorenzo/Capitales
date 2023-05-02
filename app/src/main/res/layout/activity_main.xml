@@ -42,7 +42,7 @@
         android:layout_marginBottom="33dp"
         android:ems="10"
         android:hint="Poblacion"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
