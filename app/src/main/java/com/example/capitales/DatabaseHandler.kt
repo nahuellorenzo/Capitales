@@ -36,25 +36,6 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         val result = db.insert(TABLE_NAME, null, values)
         return result != (-1).toLong()
     }
-
-    fun getAllData(): ArrayList<String> {
-        val dataList = ArrayList<String>()
-        val db = this.readableDatabase
-        val selectAllQuery = "SELECT * FROM $TABLE_NAME"
-        val cursor = db.rawQuery(selectAllQuery, null)
-        if (cursor.moveToFirst()) {
-            do {
-                if (cursor.getColumnIndex(KEY_DATA1) >= 0 )
-                {
-                    val data = cursor.getString(cursor.getColumnIndex(KEY_DATA1))
-                    dataList.add(data)
-                }
-            } while (cursor.moveToNext())
-        }
-        cursor.close()
-        return dataList
-    }
-
     fun getDataByCity(city: String): Array<Any>? {
         val db = this.readableDatabase
         val selectByCityQuery = "SELECT * FROM $TABLE_NAME WHERE $KEY_DATA2 = ?"
