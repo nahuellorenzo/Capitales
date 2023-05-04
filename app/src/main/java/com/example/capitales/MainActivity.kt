@@ -26,8 +26,7 @@ class MainActivity : ComponentActivity() {
             var poblacion = findViewById<TextView>(R.id.editTextText3).text.toString().trim()
             if (pais.isNotEmpty() && ciudadCapital.isNotEmpty() && poblacion.isNotEmpty())
             {
-                val exists = databaseHandler.getDataByCity(ciudadCapital)
-                if (exists.isNullOrEmpty() || exists[0] != pais){
+                if (databaseHandler.getDataByCity(ciudadCapital).isNullOrEmpty()){
                     val result = databaseHandler.addData(pais, ciudadCapital, poblacion.toInt())
                     if (result) {
                         Toast.makeText(this, "Se guardo la data exitosamente", Toast.LENGTH_SHORT).show()
@@ -35,11 +34,11 @@ class MainActivity : ComponentActivity() {
                         findViewById<TextView>(R.id.editTextText2).setText("")
                         findViewById<TextView>(R.id.editTextText3).setText("")
                     } else {
-                        Toast.makeText(this, "Error al guardar la data", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Error al guardar los datos", Toast.LENGTH_SHORT).show()
                     }
                 }
                 else{
-                    Toast.makeText(this, "La ciudad agregada ya existe", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error la ciudad ya existe", Toast.LENGTH_SHORT).show()
                 }
             }
             else{
